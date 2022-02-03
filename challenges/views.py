@@ -14,6 +14,10 @@ from django.shortcuts import render
 
 # def march(request):
 #     return HttpResponse('GG bois!')
+
+def monthlyChallengeByNumber(request, month):
+    return HttpResponse(month)
+
 def monthlyChallenge(requset, month):
     challengeText =None
     if(month =='january'):
