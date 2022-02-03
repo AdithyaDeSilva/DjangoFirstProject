@@ -18,7 +18,6 @@ monthlyChallenges = {
     "december":"No lie!"
 }
 
-
 # Create your views here.
 
 # def index(request):
@@ -33,8 +32,12 @@ monthlyChallenges = {
 
 def monthlyChallengeByNumber(request, month):
     months = list(monthlyChallenges.keys()) #just using list fuynction for approve
+
+    if month > len(months):
+        return HttpResponseNotFound('This month is not eligible!      (int) ')
+    
     redirectMonth = months[month - 1]
-    return HttpResponseRedirect("/challenges/"+redirectMonth)
+    return HttpResponseRedirect("/challenges/"+redirectMonth) # redirects into mentioned url  sends this url into the browser and browser send it back to the server
 
 def monthlyChallenge(requset, month):
     # challengeText =None
