@@ -55,6 +55,7 @@ def monthlyChallenge(requset, month):
 
     try:
         challengeText = monthlyChallenges[month]
-        return HttpResponse(challengeText)
+        resposeData = f"<h1>{challengeText}</h1>"
+        return HttpResponse(resposeData)
     except:
-        return HttpResponseNotFound('This month is not eligible!')
+        return HttpResponseNotFound('<h1>This month is not eligible!</h1>')
