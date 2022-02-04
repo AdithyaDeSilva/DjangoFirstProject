@@ -16,4 +16,9 @@ First section
 * Created the index view and responded the challenge/ url by returning a list of months which generates the links to the months with HTML
 
 
+Second Section
+==============
+* Sending html file as a string as the response
+* We have to configure a settings in the main project DIRS and tell django to find templates in the template folder in the app "DIRS"
+* And also register our app in the settings file and tell django to templates can be found at relevant app folders (for this the APP_DIRS variable should set to be True)
 
