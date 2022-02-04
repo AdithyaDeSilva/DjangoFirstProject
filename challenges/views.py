@@ -19,7 +19,24 @@ monthlyChallenges = {
     "december":"No lie!"
 }
 
+    
+
+
+
 # Create your views here.
+def index(request):
+    listItem = ''
+    # just using list fuynction for approve
+    months = list(monthlyChallenges.keys())
+
+    for month in  months:
+        capitalizedMonth = month.capitalize()
+        monthPath = reverse('month-challenge',args=[month])
+        listItem += f"<li><a href=\"{monthPath}\">{capitalizedMonth}</a></li>"
+
+    responseData = f"<ul>{listItem}</ul>"
+    return HttpResponse(responseData)
+
 
 # def index(request):
 #     return HttpResponse('This works!')
