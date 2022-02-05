@@ -21,4 +21,6 @@ Second Section
 * Sending html file as a string as the response
 * We have to configure a settings in the main project DIRS and tell django to find templates in the template folder in the app "DIRS"
 * And also register our app in the settings file and tell django to templates can be found at relevant app folders (for this the APP_DIRS variable should set to be True)
-
+* Replaced the render_to_string_ function and returning the httpresponse object with render function in the django.shortcut module
+* Dynamically changed the values in the html with django DTL (Django Template Language) changed html page will return with the response   (Note :- *We have to use ajax requests to do this without reloading the page) 
+* Use the Django template filters (https://docs.djangoproject.com/en/4.0/ref/templates/builtins/) to format the injected value just because formating the code is not a part of logics.

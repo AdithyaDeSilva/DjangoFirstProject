@@ -1,7 +1,7 @@
 from django.http import HttpResponse,HttpResponseNotFound,HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from django.template.loader import render_to_string
+# from django.template.loader import render_to_string    We can get rid of this line with djang.shortcuts
 
 monthlyChallenges = {
     "january": "Chicken dinners only!",
@@ -45,7 +45,10 @@ def monthlyChallengeByNumber(request, month):
 def monthlyChallenge(requset, month):
     try:
         challengeText = monthlyChallenges[month]
-        responseData = render_to_string("challenges\challenge.html")
-        return HttpResponse(responseData)
+        return render(requset,"challenges\challenge.html",{
+            "monthName" :  month ,  #we don't capitalize here but in the html with django template filters (because it is formatting thing)
+            "text": challengeText   # this is called context
+        }) # must pass the request as the first argument render function replace the render_to_string line and sending httpresponse line 
+
     except:
         return HttpResponseNotFound('<h1>This month is not eligible!</h1>')
