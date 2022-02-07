@@ -5,7 +5,7 @@ from django.urls import reverse
 
 monthlyChallenges = {
     "january": "Chicken dinners only!",
-    "february" : "Noobs only!",
+    "february": "https://www.youtube.com/watch?v=8kooIgKESYE",
     "march": "GG bois!",
     "april":"GGWP!",
     "may": "Better luck next time!",
@@ -20,17 +20,21 @@ monthlyChallenges = {
 
 # Create your views here.
 def index(request):
-    listItem = ''
     # just using list fuynction for approve
     months = list(monthlyChallenges.keys())
 
-    for month in  months:
-        capitalizedMonth = month.capitalize()
-        monthPath = reverse('month-challenge',args=[month])
-        listItem += f"<li><a href=\"{monthPath}\">{capitalizedMonth}</a></li>"
+    return render(request , "challenges/index.html", {
+        "months" : months 
+    })
 
-    responseData = f"<ul>{listItem}</ul>"
-    return HttpResponse(responseData)
+    # listItem = ''
+    # for month in  months:
+    #     capitalizedMonth = month.capitalize()
+    #     monthPath = reverse('month-challenge',args=[month])
+    #     listItem += f"<li><a href=\"{monthPath}\">{capitalizedMonth}</a></li>"
+
+    # responseData = f"<ul>{listItem}</ul>"
+    # return HttpResponse(responseData)
 
 def monthlyChallengeByNumber(request, month):
     months = list(monthlyChallenges.keys()) #just using list fuynction for approve

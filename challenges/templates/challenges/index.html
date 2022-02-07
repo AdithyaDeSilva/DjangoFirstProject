@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{monthName | title}} Challenge</title>
+    <title>All Challenges</title>
 </head> 
 <body>
-    <h1>{{monthName | title}} Challenge</h1>
-    <a href= {{ text }}> text</a>
+    <ul>
+        {% for month in months %}
+        <li><a href="">{{ month | title }}</a></li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
