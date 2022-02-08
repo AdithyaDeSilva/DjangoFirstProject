@@ -15,7 +15,7 @@ monthlyChallenges = {
     "september": "Friends",
     'october':"IDGAF",
     "november":"Levitating",
-    "december":"No lie!"
+    "december": None
 }
 
 # Create your views here.

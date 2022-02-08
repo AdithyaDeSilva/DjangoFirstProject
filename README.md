@@ -24,4 +24,8 @@ Second Section
 * Replaced the render_to_string_ function and returning the httpresponse object with render function in the django.shortcut module
 * Dynamically changed the values in the html with django DTL (Django Template Language) changed html page will return with the response   (Note :- *We have to use ajax requests to do this without reloading the page) 
 * Use the Django template filters (https://docs.djangoproject.com/en/4.0/ref/templates/builtins/) to format the injected value just because formating the code is not a part of logics.
-* Used Django tags to iterate the list of keys inside HTML template file.
+* Used Django tags and using 'for' tag iterate the list of keys inside HTML template file.
+* Used 'if' tag to make a conditional statement
+* Create a base html (layout.html) template and usign inheritance created other sub templates insides the apps(extends them by layout.html).
+* Using DIR in the settings.py file tell django to find the base template file.
+* Extended challenge.html by layout.html
