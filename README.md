@@ -32,3 +32,4 @@ Second Section
 * Use include tag for get rid of boiler plate code in the templates and move that code into a folder created as "shared" inside the template folder. And also there was a another feature which we can access variable inside which we includes in templates.  (Created a navigation header.)
 * Create a standard 404 error project wide and tell django to find that 404 template (HttpResponseNotFound replaced with Http404() its not returning anything its raise)
 * Added styling css files into the template by loading static module into the template files with "load" tag. Created a block inside the layout template called cssFiles and link the specific css files inside the sub templates with <link> tag. Lol
+* Add general stylesheet css file and configured django settings to track that file also. As what we did with the layout(base) html file.
