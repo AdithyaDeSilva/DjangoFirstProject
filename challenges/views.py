@@ -1,7 +1,7 @@
-from django.http import HttpResponse,HttpResponseNotFound,HttpResponseRedirect
+from django.http import Http404,HttpResponseNotFound,HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-# from django.template.loader import render_to_string    We can get rid of this line with djang.shortcuts
+# from django.template.loader import render_to_string    #We can get rid of this line with djang.shortcuts
 
 monthlyChallenges = {
     "january": "Chicken dinners only!",
@@ -55,4 +55,6 @@ def monthlyChallenge(requset, month):
         }) # must pass the request as the first argument render function replace the render_to_string line and sending httpresponse line 
 
     except:
-        return HttpResponseNotFound('<h1>This month is not eligible!</h1>')
+        raise Http404() #replaces the hard coded 404 error
+        # responseData = render_to_string("404.html")
+        # return HttpResponseNotFound(responseData)  # We could not use render function here it always returns a http response not a "not found" one

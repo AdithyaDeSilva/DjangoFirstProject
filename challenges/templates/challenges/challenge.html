@@ -1,13 +1,15 @@
 {% extends 'layout.html' %}
-    {% block pageTitle %}
-        {{monthName | title}} Challenge
-    {% endblock  %}
 
-    {% block content %}
-        <h1>{{monthName | title}} Challenge</h1>
-        {%if text is not None %}
-            <h2>{{text}}</h2>
-        {% else %}
-            <h2>There is no challenge for this month yet!</h2>
-        {% endif %}
-    {% endblock %}
+{% block pageTitle %}
+    {{monthName | title}} Challenge
+{% endblock  %}
+
+{% block content %}
+    {% include  "challenges/shared/header.html" %}
+    <h1>{{monthName | title}} Challenge</h1>
+    {%if text is not None %}
+        <h2>{{text}}</h2>
+    {% else %}
+        <h2>There is no challenge for this month yet!</h2>
+    {% endif %}
+{% endblock %}
