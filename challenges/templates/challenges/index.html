@@ -1,14 +1,19 @@
 {% extends "layout.html" %}
-    
-    {% block  pageTitle%}
-        All Challenges
-    {% endblock  %}
+{% load static %}    
 
-    {% block content %}
-    {% include  "challenges/shared/header.html" %}
-    <ul>
-        {% for month in months %}
-            <li><a href="{% url "month-challenge" month %}">{{ month | title }}</a></li>
-        {% endfor %}
-    </ul>
-    {% endblock %}
+{% block cssFiles %}
+    <link rel = "stylesheet" href="{% static "challenges/challenges.css" %}">
+{% endblock  %}
+
+{% block  pageTitle%}
+    All Challenges
+{% endblock  %}
+
+{% block content %}
+{% include  "challenges/shared/header.html" %}
+<ul>
+    {% for month in months %}
+        <li><a href="{% url "month-challenge" month %}">{{ month | title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
