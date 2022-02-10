@@ -34,3 +34,18 @@ Second Section
 * Added styling css files into the template by loading static module into the template files with "load" tag. Created a block inside the layout template called cssFiles and link the specific css files inside the sub templates with <link> tag. Lol
 * Add general stylesheet css file and configured django settings to track that file also. As what we did with the layout(base) html file.
 * Styled the view
+
+
+Conclusion
+==========
+* Templates - allow us to create dynamic html contents 
+* Interpolation - Adding dynamic values into a html file   {{ varName}}
+* Filters - format the dynamic variables
+* Tags - Programming inside a html template
+* Template inheritance (extends tag)
+* Use block tags to inject new values into parent template and render that file.
+* Loading static files with load tag
+* Avoiding code duplication with shared codes.
+* Views in the django handles the request send by the client.
+
+* Creating directory structure and configure django to track the files correctly.
