@@ -5,4 +5,5 @@
         "**/templates/**/*": "django-txt",
         "**/requirements{/**,*}.{txt,in}": "pip-requirements"
     },
+    "liveServer.settings.CustomBrowser": "chrome",
 }
