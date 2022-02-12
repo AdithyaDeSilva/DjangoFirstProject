@@ -18,5 +18,5 @@ from django.urls import path , include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('challenges/' , include('challenges.urls')) #forwards all request made after challenges/ into file which mentioned in the include()  # include( "_folder_.file name without file extension")
+    path('/' , include('challenges.urls')) #forwards all request made after challenges/ into file which mentioned in the include()  # include( "_folder_.file name without file extension")
 ]
